@@ -2234,6 +2234,9 @@
     <Content Include="Views\User_63130480\MayLanh.cshtml" />
     <Content Include="Views\User_63130480\TuLanh.cshtml" />
     <Content Include="Views\User_63130480\Tivi.cshtml" />
+    <Content Include="Views\SanPham_63130480\MayLanhDetail.cshtml" />
+    <Content Include="Views\SanPham_63130480\TuLanhDetail.cshtml" />
+    <Content Include="Views\SanPham_63130480\TiviDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

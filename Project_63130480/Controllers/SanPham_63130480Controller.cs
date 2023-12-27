@@ -17,5 +17,18 @@ namespace Project_63130480.Controllers
         {
             return View();
         }
+        public ActionResult MayLanhDetail()
+        {
+            return View();
+        }
+        public ActionResult TuLanhDetail()
+        {
+            return View();
+        }
+        public ActionResult TiviDetail()
+        {
+            return View();
+        }
+
     }
 }
