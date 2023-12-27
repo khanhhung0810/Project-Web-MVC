@@ -51,8 +51,6 @@ D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bi
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\roslyn\VBCSCompiler.exe
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\roslyn\VBCSCompiler.exe.config
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\Antlr3.Runtime.dll
-D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.dll
-D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\Microsoft.Web.Infrastructure.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\Newtonsoft.Json.dll
@@ -64,8 +62,6 @@ D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bi
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\System.Web.WebPages.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\System.Web.WebPages.Razor.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\WebGrease.dll
-D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.xml
-D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.xml
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\System.Web.Helpers.xml
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\System.Web.Mvc.xml
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\System.Web.Optimization.xml
@@ -81,3 +77,7 @@ D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\ob
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\obj\Debug\Project_63130480.csproj.CopyComplete
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\obj\Debug\Project_63130480.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\obj\Debug\Project_63130480.pdb
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.dll
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.dll
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.xml
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.xml

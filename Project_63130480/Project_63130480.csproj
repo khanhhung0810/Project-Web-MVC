@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{29B73CC3-DB2D-4E8F-A088-E9ABCD4213F8}</ProjectGuid>
+    <ProjectGuid>{63C19637-2087-4C77-846F-B84C581CD60B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44374</IISExpressSSLPort>
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -132,6 +132,7 @@
     <Compile Include="Areas\Admin\Controllers\Home_63130480Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SanPham_63130480Controller.cs" />
+    <Compile Include="Controllers\User_63130480Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2058,8 +2059,13 @@
     <Content Include="Content\css\slick-theme.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\daikin.jpg" />
+    <Content Include="Content\img\employee.png" />
     <Content Include="Content\img\hotdeal.png" />
+    <Content Include="Content\img\lgfridge.jpg" />
+    <Content Include="Content\img\lgoled.jpg" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\maylanh.jpg" />
     <Content Include="Content\img\product01.png" />
     <Content Include="Content\img\product02.png" />
     <Content Include="Content\img\product03.png" />
@@ -2069,15 +2075,14 @@
     <Content Include="Content\img\product07.png" />
     <Content Include="Content\img\product08.png" />
     <Content Include="Content\img\product09.png" />
+    <Content Include="Content\img\samsungfridge.jpg" />
     <Content Include="Content\img\shop01.png" />
     <Content Include="Content\img\shop02.png" />
     <Content Include="Content\img\shop03.png" />
-    <Content Include="Scripts\js\bootstrap.min.js" />
-    <Content Include="Scripts\js\jquery.min.js" />
-    <Content Include="Scripts\js\jquery.zoom.min.js" />
-    <Content Include="Scripts\js\main.js" />
-    <Content Include="Scripts\js\nouislider.min.js" />
-    <Content Include="Scripts\js\slick.min.js" />
+    <Content Include="Content\img\sony4k.jpg" />
+    <Content Include="Content\img\toshiba.jpg" />
+    <Content Include="Content\img\toshiba.png" />
+    <Content Include="Content\img\Tulanh.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2086,8 +2091,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model63130480.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model63130480.Context.cs</LastGenOutput>
       <DependentUpon>Model63130480.edmx</DependentUpon>
+      <LastGenOutput>Model63130480.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model63130480.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2096,13 +2101,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model63130480.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model63130480.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model63130480.edmx.diagram">
-      <DependentUpon>Model63130480.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -2111,10 +2109,6 @@
     <Content Include="fonts\slick.eot" />
     <Content Include="fonts\slick.ttf" />
     <Content Include="fonts\slick.woff" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Home_63130480\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\admin\dist\css\adminlte.css.map" />
     <Content Include="Content\admin\dist\css\adminlte.min.css.map" />
     <Content Include="Content\admin\dist\css\alt\adminlte.components.css.map" />
@@ -2193,6 +2187,17 @@
     <Content Include="Content\admin\plugins\summernote\summernote.js.map" />
     <Content Include="Content\admin\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\admin\plugins\toastr\toastr.js.map" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home_63130480\Index.cshtml" />
+    <EntityDeploy Include="Models\Model63130480.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model63130480.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model63130480.edmx.diagram">
+      <DependentUpon>Model63130480.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2203,6 +2208,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\jquery.min.js" />
+    <Content Include="Scripts\js\jquery.zoom.min.js" />
+    <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\js\nouislider.min.js" />
+    <Content Include="Scripts\js\slick.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2212,17 +2223,22 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SanPham_63130480\Detail.cshtml" />
+    <Content Include="Views\User_63130480\Index.cshtml" />
+    <Content Include="Views\User_63130480\MayLanh.cshtml" />
+    <Content Include="Views\User_63130480\TuLanh.cshtml" />
+    <Content Include="Views\User_63130480\Tivi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Context\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2256,9 +2272,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50948</DevelopmentServerPort>
+          <DevelopmentServerPort>49858</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44374/</IISUrl>
+          <IISUrl>https://localhost:44320/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

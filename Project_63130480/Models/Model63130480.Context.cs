@@ -13,10 +13,10 @@ namespace Project_63130480.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Project_63130480Entities : DbContext
+    public partial class Project_63130480Entities1 : DbContext
     {
-        public Project_63130480Entities()
-            : base("name=Project_63130480Entities")
+        public Project_63130480Entities1()
+            : base("name=Project_63130480Entities1")
         {
         }
     

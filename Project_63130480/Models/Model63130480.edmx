@@ -136,7 +136,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Project_63130480Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Project_63130480Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
           <EntitySet Name="QuanLies" EntityType="Self.QuanLy" />
@@ -151,7 +151,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Project_63130480ModelStoreContainer" CdmEntityContainer="Project_63130480Entities">
+        <EntityContainerMapping StorageEntityContainer="Project_63130480ModelStoreContainer" CdmEntityContainer="Project_63130480Entities1">
           <EntitySetMapping Name="KhachHangs">
             <EntityTypeMapping TypeName="Project_63130480Model.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">

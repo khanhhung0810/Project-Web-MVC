@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "MayLanh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="~/Content/img/maylanh.jpg" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Máy lạnh</h3>
+                        <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="~/Content/img/Tulanh.jpg" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Tủ lạnh</h3>
+                        <a href="#" class="cta-btn">Mua ngay<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="~/Content/img/sony4k.jpg" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Tivi</h3>
+                        <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Sản phẩm</h3>
+                    <div class="section-nav">
+                        <ul class="section-tab-nav tab-nav">
+
+                            <li><a href="../User_63130480/MayLanh">Máy lạnh</a></li>
+                            <li><a href="../User_63130480/TuLanh">Tủ lạnh</a></li>
+                            <li><a href="../User_63130480/Tivi">Tivi</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="~/Content/img/@item.AnhSanPham" alt="">
+                                            <div class="product-label">
+                                                <span class="sale">-30%</span>
+                                                <span class="new">NEW</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">@item.TenSP</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Yêu thích</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">So sánh sản phẩm</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Xem chi tiết</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+
+                                }
+
+
+
+
+
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

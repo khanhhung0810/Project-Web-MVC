@@ -59,7 +59,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Project_63130480Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Project_63130480Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
     <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
     <EntitySet Name="QuanLies" EntityType="Self.QuanLy" />
