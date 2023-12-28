@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Project_63130480ModelStoreContainer" CdmEntityContainer="Project_63130480Entities1">
-    <EntitySetMapping Name="KhachHangs">
-      <EntityTypeMapping TypeName="Project_63130480Model.KhachHang">
-        <MappingFragment StoreEntitySet="KhachHang">
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="LoaiSanPhams">
       <EntityTypeMapping TypeName="Project_63130480Model.LoaiSanPham">
         <MappingFragment StoreEntitySet="LoaiSanPham">
@@ -25,6 +12,7 @@
     <EntitySetMapping Name="QuanLies">
       <EntityTypeMapping TypeName="Project_63130480Model.QuanLy">
         <MappingFragment StoreEntitySet="QuanLy">
+          <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="HoQL" ColumnName="HoQL" />
@@ -47,6 +35,17 @@
           <ScalarProperty Name="AnhSanPham" ColumnName="AnhSanPham" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
           <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="Project_63130480Model.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

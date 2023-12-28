@@ -23,5 +23,6 @@ namespace Project_63130480.Models
         public string AnhQL { get; set; }
         public string SoDienThoaiQL { get; set; }
         public string Email { get; set; }
+        public Nullable<bool> PhanQuyen { get; set; }
     }
 }

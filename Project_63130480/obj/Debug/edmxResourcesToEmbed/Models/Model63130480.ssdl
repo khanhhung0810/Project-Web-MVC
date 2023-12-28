@@ -7,8 +7,6 @@
     <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="SoDienThoai" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
   </EntityType>
@@ -32,6 +30,7 @@
     <Property Name="AnhQL" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="SoDienThoaiQL" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhanQuyen" Type="bit" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>

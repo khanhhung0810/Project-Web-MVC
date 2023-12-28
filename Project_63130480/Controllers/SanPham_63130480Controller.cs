@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_63130480.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Project_63130480.Controllers
 {
     public class SanPham_63130480Controller : Controller
     {
+        Project_63130480Entities1 objProject_63130480Entities = new Project_63130480Entities1();
         // GET: SanPham_63130480
         public ActionResult Index()
         {
@@ -21,11 +23,12 @@ namespace Project_63130480.Controllers
         {
             return View();
         }
-        public ActionResult TuLanhDetail()
+        
+        public ActionResult TiviDetail()
         {
             return View();
         }
-        public ActionResult TiviDetail()
+        public ActionResult TuLanhDetail()
         {
             return View();
         }

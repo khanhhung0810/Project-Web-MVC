@@ -81,3 +81,7 @@ D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bi
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.dll
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.xml
 D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\EntityFramework.SqlServer.xml
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\PagedList.dll
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\PagedList.Mvc.dll
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\PagedList.xml
+D:\Nha_Trang_University\PTUD_Web1\Project_CK\Project-Web-MVC\Project_63130480\bin\PagedList.Mvc.xml

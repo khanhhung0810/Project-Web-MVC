@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Project_63130480Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="KhachHang">
-    <Key>
-      <PropertyRef Name="MaKH" />
-    </Key>
-    <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="GioiTinh" Type="Boolean" />
-  </EntityType>
   <EntityType Name="LoaiSanPham">
     <Key>
       <PropertyRef Name="MaLoaiSP" />
@@ -33,6 +21,7 @@
     <Property Name="AnhQL" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoDienThoaiQL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhanQuyen" Type="Boolean" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
@@ -60,7 +49,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Project_63130480Entities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
     <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
     <EntitySet Name="QuanLies" EntityType="Self.QuanLy" />
     <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
@@ -68,5 +56,16 @@
       <End Role="LoaiSanPham" EntitySet="LoaiSanPhams" />
       <End Role="SanPham" EntitySet="SanPhams" />
     </AssociationSet>
+    <EntitySet Name="KhachHangs" EntityType="Project_63130480Model.KhachHang" />
   </EntityContainer>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GioiTinh" Type="Boolean" />
+  </EntityType>
 </Schema>
