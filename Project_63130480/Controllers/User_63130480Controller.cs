@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Optimization;
 using PagedList;
 using Project_63130480.Models;
 
@@ -16,8 +19,20 @@ namespace Project_63130480.Controllers
         // GET: User_63130480
 
         Project_63130480Entities1 objProject_63130480Entities = new Project_63130480Entities1();
-      
-        public ActionResult Index()
+        string VaiTro()
+        {
+            var maMax = objProject_63130480Entities.KhachHangs.ToList().Select(n => n.VaiTro).Max();         
+            return maMax;
+        }
+        string LayMaKH()
+        {
+            var maMax = objProject_63130480Entities.KhachHangs.ToList().Select(n => n.MaKH).Max();
+            int maKH = int.Parse(maMax.Substring(2)) + 1;
+            string KH = String.Concat("00", maKH.ToString());
+            return "KH" + KH.Substring(maKH.ToString().Length - 1);
+        }
+        
+    public ActionResult Index()
         {
             
 
@@ -49,6 +64,8 @@ namespace Project_63130480.Controllers
         [HttpGet]
         public ActionResult DangKy()
         {
+            ViewBag.MaKH = LayMaKH();
+            ViewBag.VaiTro = VaiTro();
             return View();
         }
 
@@ -58,6 +75,9 @@ namespace Project_63130480.Controllers
         {
             if (ModelState.IsValid)
             {
+                _user.MaKH = LayMaKH();
+                _user.VaiTro = VaiTro();
+
                 var check = objProject_63130480Entities.KhachHangs.FirstOrDefault(s => s.Email == _user.Email);
                 if (check == null)
                 {
@@ -72,7 +92,6 @@ namespace Project_63130480.Controllers
                     ViewBag.error = "Email already exists";
                     return View();
                 }
-
 
             }
             return View();
@@ -100,20 +119,43 @@ namespace Project_63130480.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string email, string matkhau)
-        {          
-                var data = objProject_63130480Entities.KhachHangs.Where(s => s.Email.Equals(email) && s.MatKhau.Equals(matkhau)).ToList();
-                if (data.Count() > 0)
-                {
-                    //add session
-                    Session["HoTen"] = data.FirstOrDefault().HoTen;
-                    Session["Email"] = data.FirstOrDefault().Email;
-                    Session["MaKH"] = data.FirstOrDefault().MaKH;
+        public ActionResult Login(string email, string matkhau )
+        {
+            
+            var data1 = objProject_63130480Entities.QuanLies.Where(s => s.Email.Equals(email) && s.MatKhau.Equals(matkhau)).ToList();
+
+            var data = objProject_63130480Entities.KhachHangs.Where(s => s.Email.Equals(email) && s.MatKhau.Equals(matkhau)).ToList();
+            var quanLy = data1.FirstOrDefault();
+            var user = data.FirstOrDefault();
+            
+            //Trace.WriteLine(user.VaiTro);
+            if (user != null)
+            {                             
+                         
+                if (user.VaiTro == "User")
+                {                
+                    Session["HoTen"] = user.HoTen;
+                    Session["Email"] = user.Email;
+                    Session["MaKH"] = user.MaKH;
                     return RedirectToAction("Index");
                 }
-                
-                    ViewBag.error = "Đăng nhập không thành công";              
-                    return View();
+            }
+
+            Trace.WriteLine(quanLy.VaiTro);
+            if (quanLy != null)
+            {
+                if (quanLy.VaiTro == "Admin")
+                {
+                    
+                    Session["HoTen"] = quanLy.HoTen;
+                    Session["Email"] = quanLy.Email;
+                    Session["TaiKhoan"] = quanLy.TaiKhoan;
+                    return RedirectToAction("Index", "Product_63130480", new { area = "Admin" });
+                }
+            }
+            ViewBag.error = "Đăng nhập không thành công";
+            
+            return View();
         }
     }
 }

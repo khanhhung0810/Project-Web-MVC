@@ -14,10 +14,20 @@ namespace Project_63130480.Models
     
     public partial class KhachHang
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KhachHang()
+        {
+            this.GioHangs = new HashSet<GioHang>();
+        }
+    
         public string MaKH { get; set; }
         public string HoTen { get; set; }
         public string Email { get; set; }
         public string MatKhau { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
+        public string VaiTro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GioHang> GioHangs { get; set; }
     }
 }

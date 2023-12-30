@@ -1,0 +1,56 @@
+﻿@model Project_63130480.Models.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    string gtinh = "";
+}
+
+
+<h2>THÔNG TIN CHI TIẾT KHÁCH HÀNG</h2>
+<table border="1" cellpadding="0" cellspacing="0" style="font-size:20px;margin-left:50px;">
+    <tr>
+
+        <td>
+            <table cellpadding="2" cellspacing="10">
+
+
+                <tr>
+                    <td>Họ tên:</td>
+                    <td>@Html.DisplayFor(model => model.HoTen)</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>@Html.DisplayFor(model => model.MatKhau)</td>
+                </tr>
+                <tr>
+                    <td>Giới tính:</td>
+                    <td>
+                        @{if (Model.GioiTinh == true)
+                            { gtinh = "Nam"; }
+                            else
+                            { gtinh = "Nữ"; }
+                        }
+                        @gtinh
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vai trò:</td>
+                    <td>@Html.DisplayFor(model => model.VaiTro)</td>
+                </tr>
+                
+
+
+            </table>
+        </td>
+    </tr>
+</table>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaKH }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

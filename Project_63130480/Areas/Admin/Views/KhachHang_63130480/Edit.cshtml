@@ -1,39 +1,24 @@
 ﻿@model Project_63130480.Models.KhachHang
 
 @{
-    ViewBag.Title = "DangKy";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h2>Đăng ký tài khoản Khách hàng</h2>
-
-    <hr />
-    <div class="text">
+        <h4>Sửa thông tin</h4>
+        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaKH, "Mã khách hàng", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                <input type="text" value="@ViewBag.MaKH" disabled readonly class="form-control" />
-                @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.VaiTro, "Vai trò", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                <input type="text" value="@ViewBag.VaiTro" disabled readonly class="form-control" />
-                @Html.ValidationMessageFor(model => model.VaiTro, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.MaKH)
 
         <div class="form-group">
             @Html.LabelFor(model => model.HoTen, "Họ và tên", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
             </div>
@@ -41,7 +26,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
@@ -49,7 +34,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.MatKhau, "Mật khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
             </div>
@@ -57,8 +42,9 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.GioiTinh, "Giới tính", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
+            <div class="col-md-10">
                 <div class="checkbox">
+
                     Nam @Html.RadioButtonFor(model => model.GioiTinh, "True", new { @checked = "checked" }) &nbsp;
                     Nữ @Html.RadioButtonFor(model => model.GioiTinh, "False")
                     @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
@@ -66,52 +52,22 @@
             </div>
         </div>
 
-
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.VaiTro, "Vai trò", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VaiTro, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VaiTro, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Tạo Tài Khoản" class="btn btn-default" />
+                <input type="submit" value="Lưu" class="btn btn-default" />
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <div class=" btn btn-default">
-            @Html.ActionLink("Quay lại", "Index")
-        </div>
-    </div>
-    </div>
-
 }
 
-
-<style>
-    body {
-        background-color: #f8f9fa;
-    }
-    h2 {
-        margin-left: 35%;
-    }
-    
-    .form-horizontal {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .text{
-        margin-left:25%
-    }
-    .btn-default {
-        background-color: #007bff;
-        color: #fff;
-    }
-
-        .btn-default:hover {
-            background-color: #0056b3;
-        }
-
-    .text-danger {
-        color: #dc3545;
-    }
-</style>
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>

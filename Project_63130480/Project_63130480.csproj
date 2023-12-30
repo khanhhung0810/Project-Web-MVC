@@ -137,12 +137,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\Home_63130480Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHang_63130480Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\Product_63130480Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SanPham_63130480Controller.cs" />
     <Compile Include="Controllers\User_63130480Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs">
+      <DependentUpon>Model63130480.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>Model63130480.tt</DependentUpon>
@@ -2216,6 +2220,10 @@
     <Content Include="Areas\Admin\Views\Product_63130480\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Product_63130480\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product_63130480\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang_63130480\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang_63130480\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang_63130480\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang_63130480\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

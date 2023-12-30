@@ -9,22 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="QuanLies">
-      <EntityTypeMapping TypeName="Project_63130480Model.QuanLy">
-        <MappingFragment StoreEntitySet="QuanLy">
-          <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
-          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
-          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="HoQL" ColumnName="HoQL" />
-          <ScalarProperty Name="TenQL" ColumnName="TenQL" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="AnhQL" ColumnName="AnhQL" />
-          <ScalarProperty Name="SoDienThoaiQL" ColumnName="SoDienThoaiQL" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SanPhams">
       <EntityTypeMapping TypeName="Project_63130480Model.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
@@ -41,11 +25,37 @@
     <EntitySetMapping Name="KhachHangs">
       <EntityTypeMapping TypeName="Project_63130480Model.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuanLies">
+      <EntityTypeMapping TypeName="Project_63130480Model.QuanLy">
+        <MappingFragment StoreEntitySet="QuanLy">
+          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoaiQL" ColumnName="SoDienThoaiQL" />
+          <ScalarProperty Name="AnhQL" ColumnName="AnhQL" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GioHangs">
+      <EntityTypeMapping TypeName="Project_63130480Model.GioHang">
+        <MappingFragment StoreEntitySet="GioHang">
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -12,16 +12,14 @@ namespace Project_63130480.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class QuanLy
+    public partial class GioHang
     {
-        public string TaiKhoan { get; set; }
-        public string MatKhau { get; set; }
-        public string HoTen { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string AnhQL { get; set; }
-        public string SoDienThoaiQL { get; set; }
-        public string Email { get; set; }
-        public string VaiTro { get; set; }
+        public string MaSP { get; set; }
+        public string MaKH { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public string DiaChi { get; set; }
+    
+        public virtual KhachHang KhachHang { get; set; }
+        public virtual SanPham SanPham { get; set; }
     }
 }

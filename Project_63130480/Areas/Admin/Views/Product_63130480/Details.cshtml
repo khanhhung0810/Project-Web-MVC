@@ -5,63 +5,50 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenSP)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenSP)
-        </dd>
+<h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+<table border="1" cellpadding="0" cellspacing="0" style="font-size:20px;margin-left:50px;">
+    <tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MoTaSP)
-        </dt>
+        <td>
+            <table cellpadding="2" cellspacing="10">
 
-        <dd>
-            @Html.DisplayFor(model => model.MoTaSP)
-        </dd>
+                <tr>
+                    <td rowspan="8"><img src="~/Content/img/@Html.DisplayFor(model => model.AnhSanPham)" width="600" height="300" /></td>
+                    <td>Tên sản phẩm:</td>
+                    <td>@Html.DisplayFor(model => model.TenSP)</td>
+                </tr>
+                <tr>
+                    <td>Mô tả sản phẩm:</td>
+                    <td>@Html.DisplayFor(model => model.MoTaSP)</td>
+                </tr>
+                <tr>
+                    <td>Đơn vị tính:</td>
+                    <td>@Html.DisplayFor(model => model.DonViTinh)</td>
+                </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DonViTinh)
-        </dt>
+                <tr>
+                    <td>Đơn giá:</td>
+                    <td>@Html.DisplayFor(model => model.DonGia)</td>
+                </tr>
+                <tr>
+                    <td>Tên loại sản phẩm:</td>
+                    <td>@Html.DisplayFor(model => model.LoaiSanPham.TenLoaiSP)</td>
+                </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.DonViTinh)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AnhSanPham)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnhSanPham)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DonGia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DonGia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoaiSanPham.TenLoaiSP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoaiSanPham.TenLoaiSP)
-        </dd>
-
-    </dl>
-</div>
+            </table>
+        </td>
+    </tr>
+</table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>
+
+<style>
+    h2{
+        margin-left: 10%;
+    }
+</style>

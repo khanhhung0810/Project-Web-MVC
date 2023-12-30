@@ -14,6 +14,12 @@ namespace Project_63130480.Models
     
     public partial class SanPham
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SanPham()
+        {
+            this.GioHangs = new HashSet<GioHang>();
+        }
+    
         public string MaSP { get; set; }
         public string TenSP { get; set; }
         public string MoTaSP { get; set; }
@@ -23,5 +29,7 @@ namespace Project_63130480.Models
         public string MaLoaiSP { get; set; }
     
         public virtual LoaiSanPham LoaiSanPham { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GioHang> GioHangs { get; set; }
     }
 }

@@ -26,8 +26,9 @@ namespace Project_63130480.Models
         }
     
         public virtual DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
-        public virtual DbSet<QuanLy> QuanLies { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<QuanLy> QuanLies { get; set; }
+        public virtual DbSet<GioHang> GioHangs { get; set; }
     }
 }

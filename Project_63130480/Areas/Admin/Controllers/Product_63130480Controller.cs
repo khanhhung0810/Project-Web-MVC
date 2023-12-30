@@ -12,13 +12,28 @@ namespace Project_63130480.Areas.Admin.Controllers
 {
     public class Product_63130480Controller : Controller
     {
+
         private Project_63130480Entities1 db = new Project_63130480Entities1();
 
+        string DonVi()
+        {
+            var maMax = db.SanPhams.ToList().Select(n => n.DonViTinh).Max();
+            return maMax;
+        }
         // GET: Admin/Product_63130480
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var sanPhams = db.SanPhams.Include(s => s.LoaiSanPham);
+
+            // Lọc dữ liệu nếu có chuỗi tìm kiếm
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                sanPhams = sanPhams.Where(p => p.TenSP.Contains(searchString));
+            }
+
             return View(sanPhams.ToList());
+            
+
         }
 
         // GET: Admin/Product_63130480/Details/5
@@ -39,6 +54,8 @@ namespace Project_63130480.Areas.Admin.Controllers
         // GET: Admin/Product_63130480/Create
         public ActionResult Create()
         {
+            ViewBag.DonViTinh = DonVi();
+
             ViewBag.MaLoaiSP = new SelectList(db.LoaiSanPhams, "MaLoaiSP", "TenLoaiSP");
             return View();
         }
@@ -52,6 +69,7 @@ namespace Project_63130480.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                sanPham.DonViTinh = DonVi();
                 db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,6 +104,7 @@ namespace Project_63130480.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -4,77 +4,43 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
     int i = 0;
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "TenNV", rowsPerPage: 8);
 }
-
+<h2>Welcome Admin: @Session["HoTen"]</h2>
 <h2>Dữ liệu sản phẩm</h2>
 
+
+@using (Html.BeginForm("Index", "Product_63130480", FormMethod.Get))
+{
+    <p>
+        Tìm kiếm theo tên sản phẩm: @Html.TextBox("searchString")
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+@grid.GetHtml(
+            tableStyle: "table table-bordered table-hover",
+            footerStyle: "grid-footer",
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.Numeric,
+            alternatingRowStyle: "alternatingRowStyle",
+              columns: new[]  // colums in grid
+             {
+         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+        grid.Column("MaSP","Mã sản phẩm"), //the model fields to display
+        grid.Column("TenSP","Tên sản phẩm"  ),
+        grid.Column("MoTaSP","Mô tả sản phẩm"),
+        grid.Column("DonViTinh","Đơn vị tính"),
+        grid.Column("AnhSanPham","Ảnh sản phẩm"),
+
+grid.Column("DonGia","Đơn giá"),
+grid.Column("MaLoaiSP","Mã loại sản phẩm"),
+grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "Product_63130480",new { id = item.MaSP },"Product_63130480Controller")),
+grid.Column("Chức năng",format: (item) => Html.ActionLink("Chi tiết", "Details","Product_63130480", new { id = item.MaSP },"Product_63130480Controller")),
+grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","Product_63130480", new { id = item.MaSP },"Product_63130480Controller")),
+
+
+}
+)
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
+    @Html.ActionLink("Thêm sản phẩm mới", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            STT
-        </th>
-        <th>
-            Mã sản phẩm
-        </th>
-        <th>
-            Tên sản phẩm
-        </th>
-        <th>
-            Mô tả sản phẩm
-        </th>
-        <th>
-            Đơn vị tính
-        </th>
-        <th>
-            Ảnh sản phẩm
-        </th>
-        <th>
-            Đơn giá
-        </th>
-        <th>
-            Mã loại sản phẩm
-        </th>
-        <th>Chức năng</th>
-
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @{i++;}
-                @i
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTaSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonViTinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnhSanPham)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonGia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaLoaiSP)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
-            </td>
-        </tr>
-    }
-
-</table>

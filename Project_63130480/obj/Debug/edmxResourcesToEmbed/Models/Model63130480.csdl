@@ -8,21 +8,6 @@
     <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaLoaiS__398D8EEE" FromRole="LoaiSanPham" ToRole="SanPham" />
   </EntityType>
-  <EntityType Name="QuanLy">
-    <Key>
-      <PropertyRef Name="TaiKhoan" />
-    </Key>
-    <Property Name="TaiKhoan" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="HoQL" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenQL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="GioiTinh" Type="Boolean" />
-    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-    <Property Name="AnhQL" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SoDienThoaiQL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PhanQuyen" Type="Boolean" />
-  </EntityType>
   <EntityType Name="SanPham">
     <Key>
       <PropertyRef Name="MaSP" />
@@ -35,6 +20,7 @@
     <Property Name="DonGia" Type="Int32" />
     <Property Name="MaLoaiSP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK__SanPham__MaLoaiS__398D8EEE" FromRole="SanPham" ToRole="LoaiSanPham" />
+    <NavigationProperty Name="GioHangs" Relationship="Project_63130480Model.FK__GioHang__MaSP__4222D4EF" FromRole="SanPham" ToRole="GioHang" />
   </EntityType>
   <Association Name="FK__SanPham__MaLoaiS__398D8EEE">
     <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
@@ -50,13 +36,22 @@
   </Association>
   <EntityContainer Name="Project_63130480Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
-    <EntitySet Name="QuanLies" EntityType="Self.QuanLy" />
     <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
     <AssociationSet Name="FK__SanPham__MaLoaiS__398D8EEE" Association="Self.FK__SanPham__MaLoaiS__398D8EEE">
       <End Role="LoaiSanPham" EntitySet="LoaiSanPhams" />
       <End Role="SanPham" EntitySet="SanPhams" />
     </AssociationSet>
     <EntitySet Name="KhachHangs" EntityType="Project_63130480Model.KhachHang" />
+    <EntitySet Name="QuanLies" EntityType="Project_63130480Model.QuanLy" />
+    <EntitySet Name="GioHangs" EntityType="Project_63130480Model.GioHang" />
+    <AssociationSet Name="FK__GioHang__MaKH__4316F928" Association="Project_63130480Model.FK__GioHang__MaKH__4316F928">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="GioHang" EntitySet="GioHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GioHang__MaSP__4222D4EF" Association="Project_63130480Model.FK__GioHang__MaSP__4222D4EF">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="GioHang" EntitySet="GioHangs" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="KhachHang">
     <Key>
@@ -67,5 +62,57 @@
     <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="VaiTro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GioHangs" Relationship="Project_63130480Model.FK__GioHang__MaKH__4316F928" FromRole="KhachHang" ToRole="GioHang" />
   </EntityType>
+  <EntityType Name="QuanLy">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="AnhQL" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoaiQL" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VaiTro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GioHang">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MaKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KhachHang" Relationship="Project_63130480Model.FK__GioHang__MaKH__4316F928" FromRole="GioHang" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="Project_63130480Model.FK__GioHang__MaSP__4222D4EF" FromRole="GioHang" ToRole="SanPham" />
+  </EntityType>
+  <Association Name="FK__GioHang__MaKH__4316F928">
+    <End Type="Project_63130480Model.KhachHang" Role="KhachHang" Multiplicity="1" />
+    <End Type="Project_63130480Model.GioHang" Role="GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GioHang__MaSP__4222D4EF">
+    <End Type="Project_63130480Model.SanPham" Role="SanPham" Multiplicity="1" />
+    <End Type="Project_63130480Model.GioHang" Role="GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

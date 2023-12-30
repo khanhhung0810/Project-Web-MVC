@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Project_63130480Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GioHang">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaSP" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="KhachHang">
     <Key>
       <PropertyRef Name="MaKH" />
@@ -9,6 +19,7 @@
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
+    <Property Name="VaiTro" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="LoaiSanPham">
     <Key>
@@ -23,14 +34,13 @@
     </Key>
     <Property Name="TaiKhoan" Type="varchar" MaxLength="8" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="HoQL" Type="nvarchar" MaxLength="40" Nullable="false" />
-    <Property Name="TenQL" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="AnhQL" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="SoDienThoaiQL" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="PhanQuyen" Type="bit" />
+    <Property Name="VaiTro" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
@@ -44,6 +54,30 @@
     <Property Name="DonGia" Type="int" />
     <Property Name="MaLoaiSP" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <Association Name="FK__GioHang__MaKH__4316F928">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GioHang__MaSP__4222D4EF">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__SanPham__MaLoaiS__398D8EEE">
     <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
@@ -57,10 +91,19 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Project_63130480ModelStoreContainer">
+    <EntitySet Name="GioHang" EntityType="Self.GioHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuanLy" EntityType="Self.QuanLy" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GioHang__MaKH__4316F928" Association="Self.FK__GioHang__MaKH__4316F928">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="GioHang" EntitySet="GioHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GioHang__MaSP__4222D4EF" Association="Self.FK__GioHang__MaSP__4222D4EF">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="GioHang" EntitySet="GioHang" />
+    </AssociationSet>
     <AssociationSet Name="FK__SanPham__MaLoaiS__398D8EEE" Association="Self.FK__SanPham__MaLoaiS__398D8EEE">
       <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
       <End Role="SanPham" EntitySet="SanPham" />

@@ -1,4 +1,4 @@
-﻿@model Project_63130480.Models.KhachHang
+﻿﻿@model Project_63130480.Models.KhachHang
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,9 +8,11 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
-                Login
+                Đăng nhập
             </div>
             <div class="card-body">
+
+
                 @using (Html.BeginForm("Login", "User_63130480", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
@@ -20,16 +22,73 @@
 
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(m => m.MatKhau)
-                        @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "MatKhau" })
+                        @Html.LabelFor(m => m.MatKhau, "Mật khẩu")
+                        @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "Mật khẩu" })
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+                        <input type="submit" name="submit" class="btn btn-primary" value="Đăng nhập" />
                     </div>
+                    <div class="form-group">
+                        <a href="@Url.Action("DangKy", "User_63130480")" class="btn btn-success">Đăng ký</a>
+                    </div>
+
                 }
+                
             </div>
         </div>
     </div>
 </div>
 
 
+
+
+
+
+
+
+<style>
+    /* Add some padding to the form */
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Style the card header */
+    .card-header {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: #fff; /* Text color */
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius:10px;
+        height:30px;
+    }
+
+    /* Style the form labels */
+    .form-group label {
+        font-weight: bold;
+        color: #555; /* Label text color */
+    }
+
+    /* Style the textboxes and password input */
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    /* Style the login button */
+    .btn-primary {
+        background-color: #007bff; /* Bootstrap primary color */
+        border-color: #007bff; /* Bootstrap primary color */
+        color: #fff; /* Text color */
+    }
+
+    /* Center the card on the page */
+    .justify-content-md-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Add some margin to the top of the card */
+    .col-md-4 {
+        margin-top: 50px;
+    }
+</style>
